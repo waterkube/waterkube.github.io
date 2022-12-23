@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="author"
+              content="Waterkube">
+        <meta name="description"
+              content="Underwater Archaeology game for Kubernetes, Docker or Terminal.">
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1.0" />
+        <meta property="og:title"
+              content="Waterkube">
+        <meta property="og:type"
+              content="website">
+        <meta property="og:url"
+              content="https://waterkube.dev">
+        <meta property="og:image"
+              content="https://user-images.githubusercontent.com/1419087/189001047-548c3c3c-60d6-4f52-9dc4-6ae2d6f501ad.png">
+        <meta property="og:image:width"
+              content="1200">
+        <meta property="og:image:height"
+              content="630">
+        <meta property="og:description"
+              content="Underwater Archaeology game for Kubernetes, Docker or Terminal.">
+        <title>
+            Waterkube
+        </title>
+        <link rel="icon"
+              type="image/x-icon"
+              href="/assets/favicon.e81d01a8.ico">
+        <link rel="stylesheet"
+              href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600;700&display=swap">
+      <script type="module" crossorigin src="/assets/index.ebc68a76.js"></script>
+      <link rel="stylesheet" href="/assets/index.83958c2e.css">
+    </head>
+    <body class="bg-slate-900 bg-gradient-to-b from-sky-500 to-slate-900 bg-no-repeat text-white min-h-screen">
+        <header class="cover bg-no-repeat bg-center relative bg-cover">
+            <div class="py-16 lg:py-32">
+                <div class="container mx-auto flex flex-col items-center justify-center px-3 sm:px-0">
+                    <a class="flex items-center mb-8 lg:mb-16" href="/">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             class="w-10 h-10 mr-4 text-cyan-400 sm:w-16 sm:h-16 sm:mr-6 lg:w-24 lg:h-24 lg:mr-8"
+                             fill="currentColor"
+                             viewBox="0 0 16 16">
+                            <path d="M.036 3.314a.5.5 0 0 1 .65-.278l1.757.703a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.757-.703a.5.5 0 1 1 .372.928l-1.758.703a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0L.314 3.964a.5.5 0 0 1-.278-.65zm0 3a.5.5 0 0 1 .65-.278l1.757.703a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.757-.703a.5.5 0 1 1 .372.928l-1.758.703a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0L.314 6.964a.5.5 0 0 1-.278-.65zm0 3a.5.5 0 0 1 .65-.278l1.757.703a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.757-.703a.5.5 0 1 1 .372.928l-1.758.703a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0L.314 9.964a.5.5 0 0 1-.278-.65zm0 3a.5.5 0 0 1 .65-.278l1.757.703a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.757-.703a.5.5 0 1 1 .372.928l-1.758.703a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0l-1.757-.703a.5.5 0 0 1-.278-.65z"/>
+                        </svg>
+                        <span class="font-semibold text-4xl sm:text-6xl lg:text-8xl">
+                            Waterkube
+                        </span>
+                    </a>
+                    <div class="flex flex-col items-center space-y-3 sm:space-y-0 sm:space-x-6 mb-8 sm:flex-row lg:mb-16" x-data>
+                        <button class="flex items-center text-lg border-2 px-6 py-2 rounded-full hover:border-cyan-400 hover:text-cyan-400"
+                                @click="document.getElementById('game-loop').scrollIntoView()">
+                            Game Loop
+                        </button>
+                        <button class="flex items-center text-lg border-2 px-6 py-2 rounded-full hover:border-cyan-400 hover:text-cyan-400"
+                                @click="document.getElementById('how-to-setup').scrollIntoView()">
+                            How to setup?
+                        </button>
+                        <button class="flex items-center text-lg border-2 px-6 py-2 rounded-full hover:border-cyan-400 hover:text-cyan-400"
+                                @click="document.getElementById('how-to-play').scrollIntoView()">
+                            How to play?
+                        </button>
+                    </div>
+                    <h2 class="font-semibold text-2xl text-slate-900 bg-white px-9 py-3 -rotate-1 mb-8 sm:text-3xl lg:mb-16">
+                        Underwater Archaeology game for
+                        <span class="text-blue-600">Kubernetes</span>
+                    </h2>
+                    <h3 class="font-semibold text-xl text-slate-900 bg-white px-9 py-3 rotate-1 mb-16 sm:text-2xl lg:mb-32">
+                        ... but It also works in
+                        <span class="text-sky-600">Docker</span>
+                        or
+                        <span class="text-yellow-600">Terminal</span>
+                    </h3>
+                    <a class="flex items-center text-xl border-2 px-9 py-3 rounded-full hover:border-cyan-400 hover:text-cyan-400"
+                       href="https://github.com/waterkube/waterkube"
+                       target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             class="h-8 w-8 mr-3"
+                             fill="currentColor"
+                             viewBox="0 0 16 16">
+                            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                        </svg>
+                        Source Code
+                    </a>
+                </div>
+            </div>
+        </header>
+        <section class="relative pt-10">
+            <div class="absolute inset-0 bg-gradient-to-b from-cyan-400 opacity-25 z-0"></div>
+            <div class="absolute inset-x-0 top-0 h-7 waves bg-repeat-x bg-top z-10"></div>
+            <div class="container mx-auto relative px-3 flex flex-col items-center sm:border-l-2 sm:border-r-2 sm:px-0"
+                 x-data="container"
+                 @resize.window="initLineCount"
+                 @scroll.document="scroll">
+                <template x-for="(index, index0) in lineCount">
+                    <div class="hidden sm:block">
+                        <div class="absolute w-10 h-0 border-b border-slate-300 left-0"
+                             :style="{ top: `${index0 * lineOffset}px` }"></div>
+                        <div class="absolute w-10 h-0 border-b border-slate-300 right-0"
+                             :style="{ top: `${index0 * lineOffset}px` }"></div>
+                    </div>
+                </template>
+                <div class="hidden sm:block">
+                    <div class="absolute w-10 h-0 border-b border-slate-300 left-0 bottom-0"></div>
+                    <div class="absolute w-10 h-0 border-b border-slate-300 right-0 bottom-0"></div>
+                </div>
+                <div class="absolute -top-20 left-16 z-20 hidden md:block xl:left-32">
+                    <div class="flex flex-col items-center h-40"
+                         x-ref="diver">
+                        <div class="boat w-16 h-16 bg-no-repeat bg-contain"></div>
+                        <div class="flex-1 w-0 border-l border-dashed border-slate-300"></div>
+                        <div class="diver w-16 h-16 bg-no-repeat bg-contain xl:left-32"></div>
+                    </div>
+                </div>
+                <div class="absolute -top-20 right-16 z-20 hidden md:block xl:right-32">
+                    <div class="flex flex-col items-center h-60"
+                         x-ref="submarine">
+                        <div class="boat w-16 h-16 bg-no-repeat bg-contain -scale-x-100"></div>
+                        <div class="flex-1 w-0 border-l border-dashed border-slate-300"></div>
+                        <div class="submarine w-16 h-16 bg-no-repeat bg-contain -scale-x-100"></div>
+                    </div>
+                </div>
+                <div id="game-loop" class="flex items-center my-16 lg:my-32">
+                    <div class="h-0 w-8 border-b-2 sm:w-16 lg:w-32"></div>
+                    <h4 class="font-semibold text-2xl text-center mx-3 sm:text-4xl sm:mx-6">
+                        Game Loop
+                    </h4>
+                    <div class="h-0 w-8 border-b-2 sm:w-16 lg:w-32"></div>
+                </div>
+                <div class="mb-8 max-w-xs sm:max-w-sm lg:max-w-full lg:mb-16">
+                    <img class="max-w-screen-sm w-full"
+                         src="/assets/waterkube.8cc9fcd0.gif">
+                </div>
+                <h4 class="font-semibold text-lg text-slate-900 bg-white px-9 py-3 -rotate-1 mb-8 lg:mb-16 sm:text-xl">
+                    Find a Shallow or Deep coordinate
+                </h4>
+                <div class="grid gap-6 justify-items-center mb-8 lg:mb-16">
+                    <div class="flex items-center text-lg sm:text-xl">
+                        <span class="bg-slate-900 px-3 py-1 mr-3">
+                            Shallow
+                        </span>
+                        Send a Boat and a Diver
+                        <span class="grid-shallow ml-6 relative bg-contain w-6 h-6 sm:w-12 sm:h-12 lg:w-16 lg:h-16">
+                            <span class="flex absolute h-3 w-3 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-3 w-3 bg-cyan-500"></span>
+                            </span>
+                        </span>
+                    </div>
+                    <div class="flex items-center text-lg sm:text-xl">
+                        <span class="bg-slate-900 px-3 py-1 mr-3">
+                            Deep
+                        </span>
+                        Send a Boat and a Submarine
+                        <span class="grid-deep ml-6 relative bg-contain w-6 h-6 sm:w-12 sm:h-12 lg:w-16 lg:h-16">
+                            <span class="flex absolute h-3 w-3 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-3 w-3 bg-purple-500"></span>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                <h4 class="font-semibold text-lg text-slate-900 bg-white px-9 py-3 rotate-1 mb-8 lg:mb-16 sm:text-xl">
+                    You get an Artifact
+                </h4>
+                <div class="grid gap-6 mb-8 justify-items-center lg:mb-16">
+                    <div class="flex items-center text-lg sm:text-xl">
+                        <span class="bg-slate-900 px-3 py-1 mr-3">
+                            Combine
+                        </span>
+                        <div class="flex flex-col">
+                            You get a more valuable Artifact
+                            <div class="text-sm text-slate-300">
+                                Combinable Artifacts have only one possible pair
+                            </div>
+                        </div>
+                        <span class="ml-6 block h-6 w-6 flex items-center justify-center rounded-full bg-stone-900 border-2 border-amber-200 text-amber-300">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                 class="h-4 w-4"
+                                 fill="none"
+                                 viewBox="0 0 24 24"
+                                 stroke="currentColor"
+                                 stroke-width="2">
+                              <path stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M12 4v16m8-8H4" />
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="flex items-center text-lg sm:text-xl">
+                        <span class="bg-slate-900 px-3 py-1 mr-3">
+                            Sell
+                        </span>
+                        You get Money from a collector
+                        <div class="dollar w-12 h-12 bg-no-repeat bg-center bg-contain ml-2"></div>
+                    </div>
+                    <div class="flex items-center text-lg sm:text-xl">
+                        <span class="bg-slate-900 px-3 py-1 mr-3">
+                            Donate
+                        </span>
+                        <div class="flex flex-col">
+                            You send the Artifact to the Museum
+                            <div class="text-sm text-slate-300">
+                                You get a new Boat in exchange for the donation
+                            </div>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             class="h-8 w-8 text-amber-300 ml-6"
+                             fill="none"
+                             viewBox="0 0 24 24"
+                             stroke="currentColor"
+                             stroke-width="2">
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" />
+                        </svg>
+                    </div>
+                </div>
+                <h4 class="font-semibold text-lg text-slate-900 bg-white px-9 py-3 -rotate-1 mb-8 lg:mb-16 sm:text-xl">
+                    If you need more...
+                </h4>
+                <div class="grid gap-6 justify-items-center">
+                    <div class="flex items-center text-lg sm:text-xl">
+                        <span class="bg-slate-900 px-3 py-1 mr-3">
+                            Money
+                        </span>
+                        Sell more
+                        <div class="dollar w-12 h-12 bg-no-repeat bg-center bg-contain ml-2"></div>
+                    </div>
+                    <div class="flex items-center text-lg sm:text-xl">
+                        <span class="bg-slate-900 px-3 py-1 mr-3">
+                            Boat
+                        </span>
+                        Donate more
+                        <div class="boat w-12 h-12 bg-no-repeat bg-center bg-contain ml-6"></div>
+                    </div>
+                    <div class="flex items-center text-lg sm:text-xl">
+                        <span class="bg-slate-900 px-3 py-1 mr-3">
+                            Diver
+                        </span>
+                        Hire for
+                        <span class="flex items-center ml-3">
+                            <span class="text-amber-300 mr-1">
+                                $
+                            </span>
+                            <span class="text-lime-400">
+                                50
+                            </span>
+                        </span>
+                        <div class="diver w-12 h-12 bg-no-repeat bg-center bg-contain ml-6"></div>
+                    </div>
+                    <div class="flex items-center text-lg sm:text-xl">
+                        <span class="bg-slate-900 px-3 py-1 mr-3">
+                            Submarine
+                        </span>
+                        Buy for
+                        <span class="flex items-center ml-3">
+                            <span class="text-amber-300 mr-1">
+                                $
+                            </span>
+                            <span class="text-lime-400">
+                                100
+                            </span>
+                        </span>
+                        <div class="submarine w-12 h-12 bg-no-repeat bg-center bg-contain ml-6"></div>
+                    </div>
+                </div>
+                <div id="how-to-setup" class="flex items-center justify-center my-16 lg:my-32">
+                    <div class="h-0 w-8 border-b-2 sm:w-16 lg:w-32"></div>
+                    <h4 class="font-semibold text-2xl text-center mx-3 sm:text-4xl sm:mx-6">
+                        How to setup?
+                    </h4>
+                    <div class="h-0 w-8 border-b-2 sm:w-16 lg:w-32"></div>
+                </div>
+                <div class="grid grid-cols-3 justify-items-center gap-3 sm:gap-6 lg:gap-8">
+                    <button class="bg-white/75 rounded-full p-3 sm:p-6 lg:p-8 hover:bg-white/100"
+                            :class="isSelected('kubernetes') && 'bg-white/100'"
+                            @click="select('kubernetes')">
+                        <span class="block kubernetes bg-no-repeat bg-contain w-12 h-12 sm:w-16 sm:h-16 lg:w-24 lg:h-24"></span>
+                    </button>
+                    <button class="bg-white/75 rounded-full p-3 sm:p-6 lg:p-8 hover:bg-white/100"
+                            :class="isSelected('docker') && 'bg-white/100'"
+                            @click="select('docker')">
+                        <span class="block docker bg-no-repeat bg-contain w-12 h-12 sm:w-16 sm:h-16 lg:w-24 lg:h-24"></span>
+                    </button>
+                    <button class="bg-white/75 flex items-center justify-center rounded-full p-3 sm:p-6 lg:p-8 text-yellow-600 hover:bg-white/100"
+                            :class="isSelected('terminal') && 'bg-white/100'"
+                            @click="select('terminal')">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             class="w-12 h-12 sm:w-16 sm:h-16 lg:w-24 lg:h-24"
+                             fill="none"
+                             viewBox="0 0 24 24"
+                             stroke="currentColor"
+                             stroke-width="2">
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                    </button>
+                </div>
+                <template x-if="isSelected('kubernetes')">
+                    <h4 class="font-semibold text-lg text-slate-900 bg-white px-9 py-3 rotate-1 my-8 lg:my-16 sm:text-xl">
+                        1. Create a Service and a Deployment for two containers
+                    </h4>
+                </template>
+                <template x-if="isSelected('docker')">
+                    <h4 class="font-semibold text-lg text-slate-900 bg-white px-9 py-3 rotate-1 my-8 lg:my-16 sm:text-xl">
+                        1. Create a Docker Compose file for two containers
+                    </h4>
+                </template>
+                <template x-if="isSelected('terminal')">
+                    <h4 class="font-semibold text-lg text-slate-900 bg-white px-9 py-3 rotate-1 my-8 lg:my-16 sm:text-xl">
+                        1. Download the binary from GitHub
+                    </h4>
+                </template>
+                <template x-if="isSelected('kubernetes') || isSelected('docker')">
+                    <div class="grid gap-6 justify-items-center mb-8 lg:mb-16">
+                        <div class="flex items-center text-lg sm:text-xl">
+                            <span class="bg-slate-900 px-3 py-1 mr-3">
+                                Redis
+                            </span>
+                            For data storing on port
+                            <span class="text-lime-400 ml-2">
+                                6379
+                            </span>
+                        </div>
+                        <div class="flex items-center text-lg sm:text-xl">
+                            <span class="bg-slate-900 px-3 py-1 mr-3">
+                                App
+                            </span>
+                            For web UI on port
+                            <span class="text-lime-400 ml-2">
+                                4000
+                            </span>
+                        </div>
+                    </div>
+                </template>
+                <template x-if="isSelected('terminal')">
+                    <div class="grid gap-6 justify-items-center">
+                        <div class="flex items-center text-lg sm:text-xl">
+                            <span class="bg-slate-900 px-3 py-1 mr-3">
+                                Releases
+                            </span>
+                            <a class="break-all hover:text-cyan-400"
+                               href="https://github.com/waterkube/waterkube/releases"
+                               target="_blank">
+                                https://github.com/waterkube/waterkube/releases
+                            </a>
+                        </div>
+                    </div>
+                </template>
+                <template x-if="isSelected('kubernetes')">
+                    <div class="w-full max-w-lg xl:max-w-2xl">
+                        <pre class="bg-slate-900 text-slate-300 text-sm p-6 whitespace-pre-wrap overflow-x-auto"><span class="text-slate-600"># examples/deployment.yaml</span>
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: waterkube
+spec:
+  selector:
+    app: waterkube
+  ports:
+    - name: app
+      protocol: TCP
+      port: 4000
+    - name: redis
+      protocol: TCP
+      port: 6379
+  clusterIP: None
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: waterkube
+  labels:
+    app: waterkube
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: waterkube
+  template:
+    metadata:
+      labels:
+        app: waterkube
+    spec:
+      containers:
+        - name: waterkube-redis
+          image: redis:alpine
+          ports:
+            - containerPort: 6379
+        - name: waterkube
+          image: ghcr.io/waterkube/waterkube
+          ports:
+            - containerPort: 4000</pre>
+                    </div>
+                </template>
+                <template x-if="isSelected('docker')">
+                    <div class="w-full max-w-lg xl:max-w-2xl">
+                        <pre class="bg-slate-900 text-slate-300 text-sm p-6 whitespace-pre-wrap overflow-x-auto"><span class="text-slate-600"># examples/docker-compose.yml</span>
+
+version: '3'
+
+services:
+  redis:
+    image: redis:alpine
+    restart: unless-stopped
+
+  waterkube:
+    image: ghcr.io/waterkube/waterkube
+    restart: unless-stopped
+    environment:
+      REDIS_URL: redis://redis:6379/0
+    ports:
+      - 4000:4000</pre>
+                    </div>
+                </template>
+                <template x-if="isSelected('kubernetes')">
+                    <h4 class="font-semibold text-lg text-slate-900 bg-white px-9 py-3 -rotate-1 my-8 lg:my-16 sm:text-xl">
+                        2. Create a Job for Map creation
+                    </h4>
+                </template>
+                <template x-if="isSelected('docker')">
+                    <h4 class="font-semibold text-lg text-slate-900 bg-white px-9 py-3 -rotate-1 my-8 lg:my-16 sm:text-xl">
+                        2. Run a Docker Compose command for Map creation
+                    </h4>
+                </template>
+                <template x-if="isSelected('terminal')">
+                    <h4 class="font-semibold text-lg text-slate-900 bg-white px-9 py-3 -rotate-1 my-8 lg:my-16 sm:text-xl">
+                        2. Start the App
+                    </h4>
+                </template>
+                <template x-if="isSelected('terminal')">
+                    <div class="grid gap-6 justify-items-center mb-8 lg:mb-16">
+                        <div class="flex items-center text-lg sm:text-xl">
+                            <span class="bg-slate-900 px-3 py-1 mr-3">
+                                Redis
+                            </span>
+                            Prerequisite for data storing on port
+                            <span class="text-lime-400 ml-2">
+                                6379
+                            </span>
+                        </div>
+                    </div>
+                </template>
+                <template x-if="isSelected('kubernetes')">
+                    <div class="w-full max-w-lg xl:max-w-2xl">
+                        <pre class="bg-slate-900 text-slate-300 text-sm p-6 whitespace-pre-wrap overflow-x-auto"><span class="text-slate-600"># examples/job-map-create.yaml</span>
+
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: waterkube-map-create
+  labels:
+    app: waterkube
+spec:
+  backoffLimit: 0
+  ttlSecondsAfterFinished: 60
+  template:
+    spec:
+      containers:
+        - name: waterkube-map-create
+          image: ghcr.io/waterkube/waterkube
+          env:
+            - name: REDIS_URL
+              value: 'redis://waterkube:6379/0'
+          command:
+            - /app/waterkube
+            - map
+            - create
+      restartPolicy: Never</pre>
+                    </div>
+                </template>
+                <template x-if="isSelected('docker')">
+                    <div class="w-full max-w-lg xl:max-w-2xl">
+                        <pre class="bg-slate-900 text-slate-300 text-sm p-6 whitespace-pre-wrap overflow-x-auto">docker-compose exec waterkube /app/waterkube map create
+
+  🐚 Creating a new map...
+
+  ✅ Map is ready</pre>
+                    </div>
+                </template>
+                <template x-if="isSelected('terminal')">
+                    <div class="w-full max-w-lg xl:max-w-2xl">
+                        <pre class="bg-slate-900 text-slate-300 text-sm p-6 whitespace-pre-wrap overflow-x-auto">./waterkube web serve</pre>
+                    </div>
+                </template>
+                <template x-if="isSelected('kubernetes')">
+                    <h4 class="font-semibold text-lg text-slate-900 bg-white px-9 py-3 rotate-1 my-8 lg:my-16 sm:text-xl">
+                        3. Forward the port of the App with kubectl
+                    </h4>
+                </template>
+                <template x-if="isSelected('terminal')">
+                    <h4 class="font-semibold text-lg text-slate-900 bg-white px-9 py-3 rotate-1 my-8 lg:my-16 sm:text-xl">
+                        3. Create a new map
+                    </h4>
+                </template>
+                <template x-if="isSelected('terminal')">
+                    <div class="w-full max-w-lg xl:max-w-2xl">
+                        <pre class="bg-slate-900 text-slate-300 text-sm p-6 whitespace-pre-wrap overflow-x-auto">./waterkube map create
+
+  🐚 Creating a new map...
+
+  ✅ Map is ready</pre>
+                    </div>
+                </template>
+                <template x-if="isSelected('kubernetes')">
+                    <div class="w-full max-w-lg xl:max-w-2xl">
+                        <pre class="bg-slate-900 text-slate-300 text-sm p-6 whitespace-pre-wrap overflow-x-auto"><span class="text-slate-600"></span>kubectl port-forward service/waterkube 4000:4000</pre>
+                    </div>
+                </template>
+                <h4 class="font-semibold text-lg text-slate-900 bg-white px-9 py-3 my-8 lg:my-16 sm:text-xl"
+                    :class="isSelected('docker') ? 'rotate-1' : '-rotate-1'">
+                    Configuration in environment variables or .env file
+                </h4>
+                <div class="grid gap-6 justify-items-center">
+                    <div class="flex items-center text-lg sm:text-xl">
+                        <span class="bg-slate-900 px-3 py-1 mr-3">
+                            APP_ADDR
+                        </span>
+                        <div class="flex flex-col">
+                            Application Address
+                            <div class="text-sm text-slate-300">
+                                :4000
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center text-lg sm:text-xl">
+                        <span class="bg-slate-900 px-3 py-1 mr-3">
+                            APP_URL
+                        </span>
+                        <div class="flex flex-col">
+                            Application URL
+                            <div class="text-sm text-slate-300">
+                                http://127.0.0.1:4000
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center text-lg sm:text-xl">
+                        <span class="bg-slate-900 px-3 py-1 mr-3">
+                            REDIS_URL
+                        </span>
+                        <div class="flex flex-col">
+                            Redis URL
+                            <div class="text-sm text-slate-300">
+                                redis://127.0.0.1:6379/0
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center text-lg sm:text-xl">
+                        <span class="bg-slate-900 px-3 py-1 mr-3">
+                            REDIS_KEY_PREFIX
+                        </span>
+                        <div class="flex flex-col">
+                            Redis Key Prefix
+                            <div class="text-sm text-slate-300">
+                                waterkube:
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="how-to-play" class="flex items-center justify-center my-16 lg:my-32">
+                    <div class="h-0 w-8 border-b-2 sm:w-16 lg:w-32"></div>
+                    <h4 class="font-semibold text-2xl text-center mx-3 sm:text-4xl sm:mx-6">
+                        How to play?
+                    </h4>
+                    <div class="h-0 w-8 border-b-2 sm:w-16 lg:w-32"></div>
+                </div>
+                <template x-if="isSelected('kubernetes')">
+                    <h4 class="font-semibold text-lg text-slate-900 bg-white px-9 py-3 mb-8 lg:mb-16 sm:text-xl"
+                        :class="isSelected('docker') ? '-rotate-1' : 'rotate-1'">
+                        Create a Job for Game command
+                    </h4>
+                </template>
+                <template x-if="isSelected('docker')">
+                    <h4 class="font-semibold text-lg text-slate-900 bg-white px-9 py-3 mb-8 lg:mb-16 sm:text-xl"
+                        :class="isSelected('docker') ? '-rotate-1' : 'rotate-1'">
+                        Run a Docker Compose command
+                    </h4>
+                </template>
+                <template x-if="isSelected('terminal')">
+                    <h4 class="font-semibold text-lg text-slate-900 bg-white px-9 py-3 mb-8 lg:mb-16 sm:text-xl"
+                        :class="isSelected('docker') ? '-rotate-1' : 'rotate-1'">
+                        Run a Game command
+                    </h4>
+                </template>
+                <template x-if="isSelected('kubernetes')">
+                    <div class="w-full max-w-lg xl:max-w-2xl">
+                        <pre class="bg-slate-900 text-slate-300 text-sm p-6 whitespace-pre-wrap overflow-x-auto"><span class="text-slate-600"># examples/job-diver-explore.yaml</span>
+
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: waterkube-diver-explore
+  labels:
+    app: waterkube
+spec:
+  backoffLimit: 0
+  ttlSecondsAfterFinished: 60
+  template:
+    spec:
+      containers:
+        - name: waterkube-diver-explore
+          image: ghcr.io/waterkube/waterkube
+          env:
+            - name: REDIS_URL
+              value: 'redis://waterkube:6379/0'
+          command:
+            - /app/waterkube
+            - diver
+            - explore
+            <span class="text-slate-600"># - A0</span>
+            <span class="text-slate-600"># - A1</span>
+            <span class="text-slate-600"># ...</span>
+      restartPolicy: Never</pre>
+                    </div>
+                </template>
+                <template x-if="isSelected('docker')">
+                    <div class="w-full max-w-lg xl:max-w-2xl">
+                        <pre class="bg-slate-900 text-slate-300 text-sm p-6 whitespace-pre-wrap overflow-x-auto">docker-compose exec waterkube /app/waterkube diver explore A0
+
+  🤿 Swimming to the A0...
+
+  ✅ Excavation has begun</pre>
+                    </div>
+                </template>
+                <template x-if="isSelected('terminal')">
+                    <div class="w-full max-w-lg xl:max-w-2xl">
+                        <pre class="bg-slate-900 text-slate-300 text-sm p-6 whitespace-pre-wrap overflow-x-auto">./waterkube diver explore A0
+
+  🤿 Swimming to the A0...
+
+  ✅ Excavation has begun</pre>
+                    </div>
+                </template>
+                <h4 class="font-semibold text-lg text-slate-900 bg-white px-9 py-3 my-8 lg:my-16 sm:text-xl"
+                    :class="isSelected('docker') ? 'rotate-1' : '-rotate-1'">
+                    Game commands
+                </h4>
+                <div class="grid gap-6 justify-items-center mb-8 lg:mb-16">
+                    <div class="flex items-center text-lg sm:text-xl">
+                        <span class="bg-slate-900 px-3 py-1 mr-3">
+                            Map Create
+                        </span>
+                        <span class="font-mono text-sm">
+                            map create
+                        </span>
+                    </div>
+                    <div class="flex items-center text-lg sm:text-xl">
+                        <span class="bg-slate-900 px-3 py-1 mr-3">
+                            Map Delete
+                        </span>
+                        <span class="font-mono text-sm">
+                            map delete
+                        </span>
+                    </div>
+                    <div class="flex items-center text-lg sm:text-xl">
+                        <span class="bg-slate-900 px-3 py-1 mr-3">
+                            Artifact Combine
+                        </span>
+                        <span class="font-mono text-sm">
+                            artifact combine &lt;artifactName1&gt; &lt;artifactName2&gt;
+                        </span>
+                    </div>
+                    <div class="flex items-center text-lg sm:text-xl">
+                        <span class="bg-slate-900 px-3 py-1 mr-3">
+                            Artifact Donate
+                        </span>
+                        <span class="font-mono text-sm">
+                            artifact donate &lt;artifactNames...&gt;
+                        </span>
+                    </div>
+                    <div class="flex items-center text-lg sm:text-xl">
+                        <span class="bg-slate-900 px-3 py-1 mr-3">
+                            Artifact Sell
+                        </span>
+                        <span class="font-mono text-sm">
+                            artifact sell &lt;artifactNames...&gt;
+                        </span>
+                    </div>
+                    <div class="flex items-center text-lg sm:text-xl">
+                        <span class="bg-slate-900 px-3 py-1 mr-3">
+                            Diver Explore
+                        </span>
+                        <span class="font-mono text-sm">
+                            diver explore &lt;gridNames...&gt;
+                        </span>
+                    </div>
+                    <div class="flex items-center text-lg sm:text-xl">
+                        <span class="bg-slate-900 px-3 py-1 mr-3">
+                            Diver Hire
+                        </span>
+                        <span class="font-mono text-sm">
+                            diver hire
+                        </span>
+                    </div>
+                    <div class="flex items-center text-lg sm:text-xl">
+                        <span class="bg-slate-900 px-3 py-1 mr-3">
+                            Submarine Explore
+                        </span>
+                        <span class="font-mono text-sm">
+                            submarine explore &lt;gridNames...&gt;
+                        </span>
+                    </div>
+                    <div class="flex items-center text-lg sm:text-xl">
+                        <span class="bg-slate-900 px-3 py-1 mr-3">
+                            Submarine Buy
+                        </span>
+                        <span class="font-mono text-sm">
+                            submarine buy
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="h-72 seabed bg-repeat-x bg-bottom mt-8 sm:mt-16">
+            <div class="container mx-auto flex justify-center px-3 sm:px-0">
+                <div class="text-sm text-slate-600 text-center sm:text-base"
+                     x-data="{ year: new Date().getFullYear() }">
+                    Copyright &copy;
+                    <span x-text="year"></span>
+                    <span class="font-semibold text-cyan-400">Waterkube</span>
+                    - All rights reserved
+                </div>
+            </div>
+        </footer>
+        
+    </body>
+</html>
